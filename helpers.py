@@ -26,11 +26,11 @@ def find_student_by_id():
 
 
 def create_student():
-    name=i
+    name=input("Enter student's full name: ")
     fname = input("Enter student's first name: ")
     mname = input("Enter student's middle name: ")
     try:
-        student = Students.create(fname, mname)
+        student = Students.create(name,fname, mname)
         print(f"Newly added,{student}")
     except Exception as exc:
         print("Error creating student: ", exc)
@@ -40,6 +40,8 @@ def update_student():
     id = input("Enter the student's id: ")
     if student := Students.search(id):
         try:
+            name=input("Enter student's full name: ")
+            student.name=name
             fname = input("Enter the student's name: ")
             student.fname = fname
             mname = input("Enter the student's new middle name: ")
