@@ -29,8 +29,13 @@ def create_student():
     name=input("Enter student's full name: ")
     fname = input("Enter student's first name: ")
     mname = input("Enter student's middle name: ")
+    address = input("Enter student's address: ")
+    mobno = input("Enter student's mobile number: ")
+    email = input("Enter student's email: ")
+    dob = input("Enter student's date of birth: ")
+    gender = input("Enter student's gender: ")
     try:
-        student = Students.create(name,fname, mname)
+        student = Students.create(name,fname, mname,address,mobno,email,dob,gender)
         print(f"Newly added,{student}")
     except Exception as exc:
         print("Error creating student: ", exc)
